@@ -163,27 +163,24 @@
             movingY = e.touches[0].clientY
         })
         document.addEventListener('touchend',()=>{
-            console.log(startY)
-            console.log(movingY)
-            console.log(movingY-startY)
-            console.log(movingY-startY < -window.innerHeight/7)
             if(movingY-startY < 0 && movingY-startY < -window.innerHeight/7 && movingY != null){
-                event = new WheelEvent("wheel", {
-                    deltaX: 0,
-                    deltaY: -100,
-                    deltaZ: 0
-                })
-                document.dispatchEvent(event)
-            }else if(movingY-startY > 0 && movingY-startY > window.innerHeight/7  && movingY != null){
                 event = new WheelEvent("wheel", {
                     deltaX: 0,
                     deltaY: 100,
                     deltaZ: 0
                 })
                 document.dispatchEvent(event)
+            }else if(movingY-startY > 0 && movingY-startY > window.innerHeight/7  && movingY != null){
+                event = new WheelEvent("wheel", {
+                    deltaX: 0,
+                    deltaY: -100,
+                    deltaZ: 0
+                })
+                document.dispatchEvent(event)
             }
             startY, movingY = null
         })
+
         /* Détect la fin de l'audio */
         audio.addEventListener('ended',()=>{
             event = new WheelEvent("wheel", {
