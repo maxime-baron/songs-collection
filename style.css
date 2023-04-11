@@ -244,7 +244,8 @@ canvas{
 
     .cover-side{
         width: 100%;
-        height: 70%;
+        height: 55%;
+        align-items: flex-end;
     }
 
     .song-cover{
@@ -254,6 +255,7 @@ canvas{
 
     .title-side{
         width: 100%;
+        height: 45%;
     }
 
     .title{
