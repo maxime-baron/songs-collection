@@ -51,13 +51,16 @@
         let audio = new Audio();
         audio.crossOrigin = "anonymous";
         audio.volume = 0.05
+
         let audioContext = null;
+        let analysC = {}
+        analysC.color = '#e5e5e5'
+
         let canvas = document.querySelector('canvas')
         canvas.width = canvas.offsetWidth;
         canvas.height = canvas.offsetWidth / 2;
         let ctx = canvas.getContext('2d')
-        let analysC = {}
-        analysC.color = '#e5e5e5'
+
         let consent = false
         
         const titleColors = {
@@ -119,11 +122,11 @@
         }
 
         /* -- Title position on scroll -- */
-        titles = [...document.querySelectorAll('.title')]
-        covers = [...document.querySelectorAll('.song-cover')]
+        let titles = [...document.querySelectorAll('.title')]
+        let covers = [...document.querySelectorAll('.song-cover')]
         document.addEventListener('wheel', (e) => {
             const deltaY = e.deltaY
-            if (deltaY > 0) {
+            if (deltaY < 0) {
                 covers.unshift(covers.pop())
                 titles.unshift(titles.pop())
             } else {
@@ -154,31 +157,29 @@
         let startY, movingY, event
         document.addEventListener('touchstart',(e)=>{
             startY = e.touches[0].clientY
-            
         })
         document.addEventListener('touchmove',(e)=>{
             movingY = e.touches[0].clientY
         })
         document.addEventListener('touchend',()=>{
-            console.log(startY+movingY)
-            console.log(startY+movingY)
-            if(startY < movingY && startY+movingY > startY+movingY){
-                event = new WheelEvent("wheel", {
-                    deltaX: 0,
-                    deltaY: 100,
-                    deltaZ: 0
-                })
-                document.dispatchEvent(event)
-            }else if(startY > movingY && startY-movingY > window.innerHeight/7){
+            if(startY < movingY && startY+movingY > window.innerHeight/7){
                 event = new WheelEvent("wheel", {
                     deltaX: 0,
                     deltaY: -100,
                     deltaZ: 0
                 })
                 document.dispatchEvent(event)
+            }else if(startY > movingY && startY-movingY > window.innerHeight/7){
+                event = new WheelEvent("wheel", {
+                    deltaX: 0,
+                    deltaY: 100,
+                    deltaZ: 0
+                })
+                document.dispatchEvent(event)
             }
+            startY, movingY = null
         })
-
+        /* Détect la fin de l'audio */
         audio.addEventListener('ended',()=>{
             event = new WheelEvent("wheel", {
                 deltaX: 0,
