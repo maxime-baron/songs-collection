@@ -1,0 +1,298 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root{
+    --nav-btn-color: #4e4e4e;
+    --nav-btn-hover-color: black;
+    --body-txt-color: black;
+    --body-bg-color: white;
+    --body-shadow-color: radial-gradient(circle, rgba(255,154,97,1) 0%, rgba(180,105,63,0) 100%);
+}
+
+body{
+    background-color: var(--body-bg-color);
+    color: var(--body-txt-color);
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    transition: background-color 1s ease;
+
+    overflow: hidden;
+}
+
+/* iframe{
+    display: none;
+} */
+
+nav{
+    color: var(--nav-btn-color);
+
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+
+    width: 90.2vw;
+    height: 9.375vh;
+
+    margin: 0 auto 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    z-index: 1;
+}
+
+a{
+    font-size: 70%;
+    transition: color 200ms ease;
+}
+
+a:hover{
+    color: var(--nav-btn-hover-color);
+    transition: color 200ms ease;
+}
+
+.sound{
+    height: 70%;
+    width: auto;
+
+    cursor: pointer;
+    transition: color 200ms ease;
+}
+
+.sound:hover{
+    transition: color 200ms ease;
+    color: var(--nav-btn-hover-color);
+}
+
+.play{
+    display: none;
+}
+
+.content{
+    text-transform: uppercase;
+
+    height: 100vh;
+    width: 90.2vw;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    perspective: 1000px;
+}
+
+.cover-side{
+    width: 54%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.song-cover{
+    position: absolute;
+    height: 58vh;
+    transition: z-index 1s ease-in-out;
+}
+
+.cover-1{
+    z-index: -1;
+}
+
+.cover-2{
+    z-index: -2;
+}
+
+.cover-3{
+    z-index: -3;
+}
+
+.cover-4{
+    z-index: -4;
+}
+
+.cover-5{
+    z-index: -5;
+}
+
+.song-cover:nth-child(1){
+    transform: rotate(6.53deg);
+}
+
+.song-cover:nth-child(2){
+    transform: rotate(-3.18deg);
+}
+
+.song-cover:nth-child(3){
+    /* transform: rotate(6.53deg); */
+}
+
+.song-cover:nth-child(4){
+    transform: rotate(2.99deg);
+}
+
+.song-cover:nth-child(5){
+    transform: rotate(2.28deg);
+}
+
+
+.title-side{
+    width: 46%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    font-size: 5vw;
+    font-weight: bold;
+
+    position: absolute;
+    transition-property: transform, opacity;
+    transition-duration: 1000ms, 500ms;
+    transition-timing-function: ease, ease;
+}
+
+.title-2{
+    opacity: 60%;
+    transform: translateY(200%) scale(0.7);
+}
+
+.title-3{
+    opacity: 0;
+    transform: translateY(300%) scale(0.6);
+
+}
+
+.title-4{
+    opacity: 0;
+    transform: translateY(-300%) scale(0.6);
+}
+
+.title-5{
+    opacity: 60%;
+    transform: translateY(-200%) scale(0.7);
+}
+
+canvas{
+    width: 100%;
+    opacity: 100%;
+}
+
+.shadows{
+    width: 100vw;
+    height: 100vh;
+
+    position: absolute;
+
+}
+
+.shadow{
+    background: var(--body-shadow-color);
+
+    width: 18vw;
+    height: 18vw;
+    position: absolute;
+    border-radius: 50%;
+
+    filter: blur(169.5px);
+    z-index: -900;
+}
+
+.north{
+    left: 23%;
+    top: 34%;
+}
+
+.south{
+    top: 58%;
+    left: 19%;
+}
+
+.west{
+    top: 27%;
+    left: 10%;
+}
+
+.east{
+    left: 32%;
+    top: 35%;
+}
+
+.shadow-large{
+    height: 75vh;
+    right: -20%;
+    top: 15%;
+}
+
+@media only screen and (orientation: portrait) {
+    /* Styles spécifiques pour les appareils en mode portrait */
+    nav{
+        height: 5.375vh;
+    }
+
+    a{
+        font-size: 18px;
+    }
+
+    .content{
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .cover-side{
+        width: 100%;
+        height: 70%;
+    }
+
+    .song-cover{
+        height: 50%;
+    }
+
+    .title-side{
+        width: 100%;
+    }
+
+    .title{
+        font-size: 7vw;
+    }
+
+    .shadows{
+        overflow: hidden;
+    }
+
+    .shadow{
+        width: 30vw;
+        height: 30vw;
+    }
+
+    .north{
+        left: 35%;
+        top: 4%;
+    }
+
+    .west{
+        top: 27%;
+        left: 6%;
+    }
+
+    .south{
+        top: 45%;
+        left: 35%;
+    }
+
+    .east{
+        left: 67%;
+        top: 28%;
+    }
+
+    .shadow-large{
+        width: 75vw;
+        right: 10%;
+        top: 101%;
+    }
+}
+  
+  

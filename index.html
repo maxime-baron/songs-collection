@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Test</title>
+</head>
+<body>
+    <nav>
+        <svg class="sound play" width="88" height="88" viewBox="0 0 88 88" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25.6667 31.5559C25.6667 31.5559 25.6667 31.5559 25.6667 31.5559C28.0144 31.5559 30.266 30.6232 31.9261 28.9631L41.4334 19.4559C42.5945 18.2947 43.9242 18.0344 45.4227 18.6749C46.9211 19.3153 47.6691 20.4617 47.6667 22.1142V62.9975C47.6667 64.6475 46.9175 65.794 45.419 66.4369C43.9206 67.0797 42.592 66.8194 41.4334 65.6559L31.9261 56.1486C30.266 54.4885 28.0144 53.5559 25.6667 53.5559C25.6667 53.5559 25.6667 53.5559 25.6667 53.5559C25.6667 53.5559 14.6667 53.5559 14.6667 42.5559C14.6667 31.5559 25.6667 31.5559 25.6667 31.5559Z"/>
+            <path d="M61.8693 64.5559C60.4127 64.5559 59.144 61.1253 59.9493 59.9116C62.1127 56.6514 64.1667 51.2824 64.1667 42.6475C64.1667 33.9489 62.0822 28.5227 59.9013 25.2261C59.0703 23.9699 60.3431 20.5559 61.8493 20.5559C62.1626 20.5559 62.4635 20.6599 62.6954 20.8706C64.3951 22.4151 71.5 29.6435 71.5 42.5559C71.5 55.509 64.3501 62.7422 62.6795 64.2556C62.4568 64.4572 62.1697 64.5559 61.8693 64.5559Z"/>
+        </svg>
+        <svg class="sound mute" width="88" height="88" viewBox="0 0 88 88" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path d="M22 31.5559C22 31.5559 22 31.5559 22 31.5559V31.5559C24.3477 31.5559 26.5993 30.6232 28.2594 28.9631L37.7667 19.4559C38.9278 18.2947 40.2576 18.0344 41.756 18.6749C43.2545 19.3153 44.0025 20.4617 44 22.1142V62.9975C44 64.6475 43.2508 65.794 41.7523 66.4369C40.2539 67.0798 38.9253 66.8194 37.7667 65.6559L28.2594 56.1486C26.5993 54.4885 24.3477 53.5559 22 53.5559V53.5559C22 53.5559 22 53.5559 22 53.5559C22 53.5559 11 53.5559 11 42.5559C11 31.5559 22 31.5559 22 31.5559Z"/>
+            <path d="M51.6479 36.7413C50.216 35.3094 50.216 32.9878 51.6479 31.5559C53.0798 30.1239 55.4014 30.1239 56.8333 31.5559L73.3333 48.0559C74.7653 49.4878 74.7653 51.8094 73.3333 53.2413C71.9014 54.6732 69.5798 54.6732 68.1479 53.2413L51.6479 36.7413Z"/>
+            <path d="M51.3333 53.2413C49.9014 51.8094 49.9014 49.4878 51.3333 48.0559L67.8333 31.5559C69.2653 30.1239 71.5869 30.1239 73.0188 31.5559C74.4507 32.9878 74.4507 35.3094 73.0188 36.7413L56.5188 53.2413C55.0869 54.6732 52.7653 54.6732 51.3333 53.2413Z"/>
+        </svg>
+            
+                
+        <a class="about" href="#">About</a>
+    </nav>
+    <div class="content">
+        <div class="shadows">
+            <div class="shadow north"></div>
+            <div class="shadow west"></div>
+            <div class="shadow south"></div>
+            <div class="shadow east"></div>
+            <div class="shadow shadow-large"></div>
+        </div>
+        <div class="cover-side">
+            <img src="https://e-cdns-images.dzcdn.net/images/cover/862ab860ff69c30deeb5979db6e46b62/500x500-000000-80-0-0.jpg" alt="Cover album" class="song-cover cover-1">
+            <img src="https://lalogemag.fr/img/laylow-trinity.jpg" alt="Cover album" class="song-cover cover-2">
+            <img src="https://cdns-images.dzcdn.net/images/cover/4fc5f387624c25de0ec96b4719e3a36d/350x350.jpg" alt="Cover album" class="song-cover cover-3">
+            <img src="https://cdns-images.dzcdn.net/images/cover/134778e4c4f19ea71c82408300925a9a/500x500.jpg" alt="Cover album" class="song-cover cover-4">
+            <img src="https://cdns-images.dzcdn.net/images/cover/6693e6ad39c44db8a408375aded07d5d/500x500.jpg" alt="Cover album" class="song-cover cover-5">
+        </div>
+        <div class="title-side">
+            <span class="title title-1">Trance</span>
+            <span class="title title-2">NAKRé</span>
+            <span class="title title-3">Woo</span>
+            <span class="title title-4">Die For You</span>
+            <span class="title title-5">City Of Stars</span>
+            <canvas class="canvas"></canvas>
+        </div>
+    </div>
+    <script type="text/javascript">
+        let audio = new Audio();
+        audio.crossOrigin = "anonymous";
+        audio.volume = 0.05
+        let audioContext = null;
+        let canvas = document.querySelector('canvas')
+        canvas.width = canvas.offsetWidth;
+        canvas.height = canvas.offsetWidth / 2;
+        let ctx = canvas.getContext('2d')
+        let analysC = {}
+        analysC.color = '#e5e5e5'
+        let consent = false
+        
+        const titleColors = {
+            'NAKRé': {
+                'url':"https://p.scdn.co/mp3-preview/cb793bb3f2f3b83b66c97f140c3132a60ec549f9?cid=cfe923b2d660439caf2b557b21f31221",
+                'color':{
+                    '--body-bg-color': 'black',
+                    '--body-txt-color': 'white',
+                    '--nav-btn-color': '#b1b1b1',
+                    '--nav-btn-hover-color': 'white',
+                    '--body-anl-color': '#121212',
+                    '--body-shadow-color': 'radial-gradient(circle, rgb(47 110 58) 0%, rgba(4, 166, 33, 0) 100%)'
+                }
+            },
+            'Trance': {
+                'url':"https://cdns-preview-d.dzcdn.net/stream/c-d5ec6a3b5a341a06adfa193bf47a21ed-4.mp3",
+                'color':{
+                    '--body-bg-color': 'white',
+                    '--body-txt-color': 'black',
+                    '--nav-btn-color': '#4e4e4e',
+                    '--nav-btn-hover-color': 'black',
+                    '--body-anl-color': '#e5e5e5',
+                    '--body-shadow-color': 'radial-gradient(circle, rgba(255,154,97,1) 0%, rgba(180,105,63,0) 100%)'
+                }
+            },
+            'Woo': {
+                'url':'https://cdns-preview-d.dzcdn.net/stream/c-d0e20af83d151057443c77330e45f449-7.mp3',
+                'color':{
+                    '--body-bg-color': '#E7E8EA',
+                    '--body-txt-color': 'black',
+                    '--nav-btn-color': '#4e4e4e',
+                    '--nav-btn-hover-color': 'black',
+                    '--body-anl-color': '#cfcfcf',
+                    '--body-shadow-color': 'radial-gradient(circle, rgb(179 88 91) 0%, rgba(55, 3, 5, 0) 100%)'
+                }
+            },
+            'Die For You': {
+                'url':'https://cdns-preview-7.dzcdn.net/stream/c-712eb65b632054b005b9038b9baeabec-4.mp3',
+                'color':{
+                    '--body-bg-color': '#C00A3D',
+                    '--body-txt-color': '#EEBF0C',
+                    '--nav-btn-color': '#EEBF0C',
+                    '--nav-btn-hover-color': '#FFD01F',
+                    '--body-anl-color': '#dc771f',
+                    '--body-shadow-color': 'radial-gradient(circle, rgb(48 122 231) 0%, rgba(8, 35, 75, 0) 100%)'
+                }
+            },
+            'City Of Stars': {
+                'url':'https://cdns-preview-4.dzcdn.net/stream/c-4c3d744124d545ce09156fec16cc6079-7.mp3',
+                'color':{
+                    '--body-bg-color': '#010439',
+                    '--body-txt-color': 'white',
+                    '--nav-btn-color': '#b1b1b1',
+                    '--nav-btn-hover-color': 'white',
+                    '--body-anl-color': '#12165a',
+                    '--body-shadow-color': 'radial-gradient(circle, rgb(215 0 205) 0%, rgba(255, 255, 255, 0) 100%)'
+                }
+            }
+        }
+
+        /* -- Title position on scroll -- */
+        titles = [...document.querySelectorAll('.title')]
+        covers = [...document.querySelectorAll('.song-cover')]
+        document.addEventListener('wheel', (e) => {
+            const deltaY = e.deltaY
+            if (deltaY > 0) {
+                covers.unshift(covers.pop())
+                titles.unshift(titles.pop())
+            } else {
+                covers.push(covers.shift())
+                titles.push(titles.shift())
+            }
+            titles.forEach((title, index) => {
+                title.classList.remove(title.classList[title.classList.length - 1])
+                title.classList.add(`title-${index + 1}`)
+                if (title.classList.contains('title-1')) {
+                    const color = titleColors[title.textContent]['color']
+                    Object.entries(color).forEach(([property, value]) => {
+                        document.documentElement.style.setProperty(property, value)
+                    })
+                    analysC.color = titleColors[title.textContent]['color']['--body-anl-color']
+                    audio.src = titleColors[title.textContent]['url']
+                    if(consent){
+                        audio.play();
+                    }
+                }
+            })
+            covers.forEach((cover, index) => {
+                cover.classList.remove(cover.classList[cover.classList.length - 1])
+                cover.classList.add(`cover-${index + 1}`)
+            })
+        })
+        let t = []
+        let startY, movingY, event
+        document.addEventListener('touchstart',(e)=>{
+            startY = e.touches[0].clientY
+            
+        })
+        document.addEventListener('touchmove',(e)=>{
+            movingY = e.touches[0].clientY
+        })
+        document.addEventListener('touchend',()=>{
+            console.log(startY+movingY)
+            console.log(startY+movingY)
+            if(startY < movingY && startY+movingY > startY+movingY){
+                event = new WheelEvent("wheel", {
+                    deltaX: 0,
+                    deltaY: 100,
+                    deltaZ: 0
+                })
+                document.dispatchEvent(event)
+            }else if(startY > movingY && startY-movingY > window.innerHeight/7){
+                event = new WheelEvent("wheel", {
+                    deltaX: 0,
+                    deltaY: -100,
+                    deltaZ: 0
+                })
+                document.dispatchEvent(event)
+            }
+        })
+
+        audio.addEventListener('ended',()=>{
+            event = new WheelEvent("wheel", {
+                deltaX: 0,
+                deltaY: -100,
+                deltaZ: 0
+            })
+
+            document.dispatchEvent(event)
+        })
+
+        /* -- Sound svg click -- */
+        sounds = [...document.querySelectorAll('.sound')]
+        sounds.forEach(sound => {
+            sound.addEventListener('click',(e)=>{
+        if (sound.classList.contains("play")){
+            sound.style.display = "none"
+            sound.nextElementSibling.style.display = "block"
+            audio.volume = 0
+            consent =  false
+        }else{
+            consent = true
+            sound.style.display = "none"
+            sound.previousElementSibling.style.display = "block"
+            titles.forEach((title, index) => {
+                if (title.classList.contains('title-1')) {
+                    if(audio.src==''){
+                        audio.src = titleColors[title.textContent]['url']
+                    }
+                    audio.play()
+                    if (!audioContext){
+                        audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                        let analyser = audioContext.createAnalyser()
+                        let src = audioContext.createMediaElementSource(audio)
+                        src.connect(analyser)
+                        analyser.connect(audioContext.destination)
+                        analyser.fftSize = 32
+
+                        const bufferLength = analyser.frequencyBinCount
+                        const dataArray = new Uint8Array(bufferLength)
+                        let barWidth = (canvas.width/2)/bufferLength
+                        let barHeight
+                        let x
+
+                        animate()
+
+                        function animate(){
+                        analys = analysC
+                        x = 0
+                        ctx.clearRect(0,0, canvas.width, canvas.height)
+                        analyser.getByteFrequencyData(dataArray)
+                        for(let i=0; i<bufferLength;i++){
+                            barHeight = dataArray[i]/3
+                            ctx.fillStyle = analys.color
+                            roundRectTop(canvas.width/2 - x, canvas.height/2- barHeight, barWidth, barHeight,canvas.height * 0.207)
+                            ctx.fill()
+                            roundRectTop(canvas.width/2 + x, canvas.height/2- barHeight, barWidth, barHeight,canvas.height * 0.207)
+                            ctx.fill()
+                            x+= barWidth+0.5 
+                        }
+
+                        x=0
+                        for(let i=0; i<bufferLength;i++){
+                            barHeight = dataArray[i]/3
+                            ctx.fillStyle = analys.color
+                            roundRectBot(canvas.width/2 - x, canvas.height/2, barWidth, barHeight,canvas.height * 0.207)
+                            ctx.fill()
+                            roundRectBot(canvas.width/2 + x, canvas.height/2, barWidth, barHeight,canvas.height * 0.207)
+                            ctx.fill()
+                            x+= barWidth+0.5
+                        }
+                        requestAnimationFrame(animate)
+                    }
+                    }
+                }
+            })
+                }
+            })
+        });
+
+        function roundRectTop(x, y, w, h, radiusPercent) {
+            // Dessine un rectangle avec des coins arrondis en Haut
+            r = Math.min(w, h) * radiusPercent / 100
+            ctx.beginPath()
+            h>0 ? ctx.moveTo(x + r, y) : ctx.moveTo(x, y)
+            h>0 ? ctx.lineTo(x + w - r, y) : ctx.lineTo(x + w, y)
+            ctx.quadraticCurveTo(x + w, y, x + w, y + r)
+            ctx.lineTo(x + w, y + h)
+            ctx.quadraticCurveTo(x + w, y + h, x + w, y + h)
+            ctx.lineTo(x, y + h)
+            ctx.quadraticCurveTo(x, y + h, x, y + h)
+            h>0 ? ctx.lineTo(x, y + r) : ctx.lineTo(x, y)
+            h>0 ? ctx.quadraticCurveTo(x, y, x + r, y) : ctx.quadraticCurveTo(x, y, x, y)
+            ctx.closePath()
+        }
+
+        function roundRectBot(x, y, w, h, radiusPercent) {
+            // Dessine un rectangle avec des coins arrondis en Bas
+            r = Math.min(w, h) * radiusPercent / 100
+            ctx.beginPath()
+            ctx.moveTo(x, y)
+            ctx.lineTo(x + w, y)
+            h>0 ? ctx.quadraticCurveTo(x + w, y, x + w, y + r) : ctx.quadraticCurveTo(x + w, y, x + w, y)
+            h>0 ? ctx.lineTo(x + w, y + h - r) : ctx.lineTo(x + w, y + h)
+            ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h)
+            h>0 ? ctx.lineTo(x + r, y + h) : ctx.lineTo(x, y + h)
+            h>0 ? ctx.quadraticCurveTo(x, y + h, x, y + h - r) :ctx.quadraticCurveTo(x, y + h, x, y + h)
+            ctx.lineTo(x, y)
+            ctx.quadraticCurveTo(x, y, x, y)
+            ctx.closePath()
+        }
+    </script>
+</body>
+</html>
