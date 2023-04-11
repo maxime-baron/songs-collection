@@ -197,7 +197,7 @@
         if (sound.classList.contains("play")){
             sound.style.display = "none"
             sound.nextElementSibling.style.display = "block"
-            audio.volume = 0
+            audio.pause()
             consent =  false
         }else{
             consent = true
