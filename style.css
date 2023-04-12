@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
 :root{
     --nav-btn-color: #4e4e4e;
     --nav-btn-hover-color: black;
@@ -9,6 +7,8 @@
 }
 
 body{
+    will-change: background-color;
+
     background-color: var(--body-bg-color);
     color: var(--body-txt-color);
     font-size: 18px;
@@ -45,11 +45,13 @@ nav{
 a{
     font-size: 18px;
     transition: color 200ms ease;
+    will-change: color;
 }
 
 a:hover{
     color: var(--nav-btn-hover-color);
     transition: color 200ms ease;
+    will-change: color;
 }
 
 .sound{
@@ -58,11 +60,15 @@ a:hover{
 
     cursor: pointer;
     transition: color 200ms ease;
+
+    will-change: color;
 }
 
 .sound:hover{
     transition: color 200ms ease;
     color: var(--nav-btn-hover-color);
+
+    will-change: color;
 }
 
 .play{
@@ -80,7 +86,7 @@ a:hover{
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    perspective: 1000px;
+    /* perspective: 1000px; */
 }
 
 .cover-side{
@@ -94,6 +100,8 @@ a:hover{
     position: absolute;
     height: 58vh;
     transition: z-index 1s ease-in-out;
+
+    will-change: z-index;
 }
 
 .cover-1{
@@ -125,7 +133,7 @@ a:hover{
 }
 
 .song-cover:nth-child(3){
-    /* transform: rotate(6.53deg); */
+    transform: rotate(6.53deg);
 }
 
 .song-cover:nth-child(4){
@@ -145,6 +153,8 @@ a:hover{
 }
 
 .title{
+    will-change: transform, opacity, background-color;
+
     font-size: 5vw;
     font-weight: bold;
 
@@ -198,6 +208,8 @@ canvas{
 
     filter: blur(169.5px);
     z-index: -900;
+
+    will-change: background-color;
 }
 
 .north{
@@ -263,7 +275,7 @@ canvas{
     }
 
     .shadows{
-        overflow: hidden;
+        display: none;
     }
 
     .shadow{
