@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
-    <title>Test</title>
+    <title>Songs Collection</title>
 </head>
 <body>
     <nav>
@@ -127,14 +127,17 @@
         /* -- Title position on scroll -- */
         let titles = [...document.querySelectorAll('.title')]
         let covers = [...document.querySelectorAll('.song-cover')]
+        let deltaY = 0
         document.addEventListener('wheel', (e) => {
-            const deltaY = e.deltaY
-            if (deltaY < 0) {
+            deltaY += e.deltaY
+            if (deltaY >= 300) {
                 covers.unshift(covers.pop())
                 titles.unshift(titles.pop())
-            } else {
+                deltaY = 0
+            } else if (deltaY <= -300){
                 covers.push(covers.shift())
                 titles.push(titles.shift())
+                deltaY = 0
             }
             titles.forEach((title, index) => {
                 title.classList.remove(title.classList[title.classList.length - 1])
@@ -169,14 +172,14 @@
             if(movingY-startY < 0 && movingY-startY < -window.innerHeight/7 && movingY != null){
                 event = new WheelEvent("wheel", {
                     deltaX: 0,
-                    deltaY: 100,
+                    deltaY: -300,
                     deltaZ: 0
                 })
                 document.dispatchEvent(event)
             }else if(movingY-startY > 0 && movingY-startY > window.innerHeight/7  && movingY != null){
                 event = new WheelEvent("wheel", {
                     deltaX: 0,
-                    deltaY: -100,
+                    deltaY: 300,
                     deltaZ: 0
                 })
                 document.dispatchEvent(event)
@@ -188,7 +191,7 @@
         audio.addEventListener('ended',()=>{
             event = new WheelEvent("wheel", {
                 deltaX: 0,
-                deltaY: 100,
+                deltaY: 300,
                 deltaZ: 0
             })
 
