@@ -86,7 +86,6 @@ a:hover{
     flex-direction: row;
     align-items: stretch;
     justify-content: center;
-    /* perspective: 1000px; */
 }
 
 .cover-side{
@@ -94,56 +93,38 @@ a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+
+    perspective: 1000px;
+    transform-style: preserve-3d;
 }
 
 .song-cover{
     position: absolute;
     height: 58vh;
-    transition: z-index 1s ease-in-out;
+    transition: transform 200ms ease-in-out;
 
-    will-change: z-index;
+    will-change: transform;
 }
 
 .cover-1{
-    z-index: -1;
+    transform: translateZ(-1px) rotate(6.53deg);
 }
 
 .cover-2{
-    z-index: -2;
+    transform: translateZ(-2px) rotate(-3.18deg);
 }
 
 .cover-3{
-    z-index: -3;
+    transform: translateZ(-3px) rotate(6.53deg);
 }
 
 .cover-4{
-    z-index: -4;
+    transform: translateZ(-4px) rotate(2.99deg);
 }
 
 .cover-5{
-    z-index: -5;
+    transform: translateZ(-5px) rotate(2.28deg);
 }
-
-.song-cover:nth-child(1){
-    transform: rotate(6.53deg);
-}
-
-.song-cover:nth-child(2){
-    transform: rotate(-3.18deg);
-}
-
-.song-cover:nth-child(3){
-    transform: rotate(6.53deg);
-}
-
-.song-cover:nth-child(4){
-    transform: rotate(2.99deg);
-}
-
-.song-cover:nth-child(5){
-    transform: rotate(2.28deg);
-}
-
 
 .title-side{
     width: 46%;

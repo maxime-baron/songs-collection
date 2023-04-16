@@ -141,30 +141,13 @@
                 covers.unshift(covers.pop())
                 titles.unshift(titles.pop())
                 deltaY = 0
+                changeAndPlay()
             } else if (deltaY <= -300){
                 covers.push(covers.shift())
                 titles.push(titles.shift())
                 deltaY = 0
+                changeAndPlay()
             }
-            titles.forEach((title, index) => {
-                title.classList.remove(title.classList[title.classList.length - 1])
-                title.classList.add(`title-${index + 1}`)
-                if (title.classList.contains('title-1')) {
-                    const color = titleColors[title.textContent]['color']
-                    Object.entries(color).forEach(([property, value]) => {
-                        document.documentElement.style.setProperty(property, value)
-                    })
-                    analysC.color = titleColors[title.textContent]['color']['--body-anl-color']
-                    audio.src = titleColors[title.textContent]['url']
-                    if(consent){
-                        audio.play();
-                    }
-                }
-            })
-            covers.forEach((cover, index) => {
-                cover.classList.remove(cover.classList[cover.classList.length - 1])
-                cover.classList.add(`cover-${index + 1}`)
-            })
         })
         let t = []
         let startY, movingY = null
@@ -273,6 +256,28 @@
                 }
             })
         });
+
+        function changeAndPlay(){
+            titles.forEach((title, index) => {
+                title.classList.remove(title.classList[title.classList.length - 1])
+                title.classList.add(`title-${index + 1}`)
+                if (title.classList.contains('title-1')) {
+                    const color = titleColors[title.textContent]['color']
+                    Object.entries(color).forEach(([property, value]) => {
+                        document.documentElement.style.setProperty(property, value)
+                    })
+                    analysC.color = titleColors[title.textContent]['color']['--body-anl-color']
+                    audio.src = titleColors[title.textContent]['url']
+                    if(consent){
+                        audio.play();
+                    }
+                }
+            })
+            covers.forEach((cover, index) => {
+                cover.classList.remove(cover.classList[cover.classList.length - 1])
+                cover.classList.add(`cover-${index + 1}`)
+            })
+        }
 
         function roundRectTop(x, y, w, h, radiusPercent) {
             // Dessine un rectangle avec des coins arrondis en Haut
